@@ -222,7 +222,7 @@ namespace SeedACloud.GrpcClient
             };
 
 
-            Course course3 = new Course
+            Course course3 = new()
             {
                 Id = 25,
                 Title = "FMSA2023",

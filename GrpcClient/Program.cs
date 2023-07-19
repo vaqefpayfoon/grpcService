@@ -32,15 +32,15 @@ namespace SeedACloud.GrpcClient
             // Console.WriteLine("Hello GRPC World!");
             // Console.ReadLine();
 
-            Console.WriteLine("Executing Unary Call GetCourses");
-            await GrpcCourseClient.GetCourses();
+            // Console.WriteLine("Executing Unary Call GetCourses");
+            // await GrpcCourseClient.GetCourses();
 
 
-            //Console.WriteLine("Executing ServerSide Streaming Call");
-            //await GrpcCourseClient.GetCourseStream();
+            // Console.WriteLine("Executing ServerSide Streaming Call");
+            // await GrpcCourseClient.GetCourseStream();
 
-            //Console.WriteLine("Executing Client Stream Call");
-            //await GrpcCourseClient.SendCourseStream();
+            Console.WriteLine("Executing Client Stream Call");
+            await GrpcCourseClient.SendCourseStream();
 
             //Console.WriteLine("Executing Bi STream Call");
             //await GrpcCourseClient.BiStream();
