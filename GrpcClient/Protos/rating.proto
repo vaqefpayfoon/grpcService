@@ -1,0 +1,16 @@
+/*
+syntax = "proto3";
+
+option csharp_namespace = "SeedACloud.Grpc";
+
+package seedacloud;
+
+
+  message Rating {
+		int32 Id =1;
+		int32 CourseId =2;
+		string StudentName =3;
+		int32 StarValue =4;
+		string Review =5;
+		}
+		*/

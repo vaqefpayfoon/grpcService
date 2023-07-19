@@ -1,0 +1,154 @@
+syntax = "proto3";
+
+option csharp_namespace = "SeedACloud.Grpc";
+
+import "google/protobuf/any.proto";
+import "google/protobuf/empty.proto";
+
+///To seperate ratings definition from courses
+///import "protos/rating.proto" ;
+
+///package seedacloud;  //OPTIONAL 
+
+// The course service definition.
+service CourseService {
+//Unary
+rpc GetCourses (google.protobuf.Empty) returns (CourseList);
+//Server Streaming
+rpc GetCoursesAsStream (google.protobuf.Empty) returns (stream Course) ;
+//Server Streaming with Filter
+rpc GetCoursesByFilterAsStream (CourseFilter) returns (stream Course);
+//Client Streaming
+rpc SendCourseAsStream (stream Course) returns(OKResponse);
+//Bidirectional Streaming
+rpc BiStreamCall (stream Course) returns(stream CourseId);
+
+//Unary - Update
+rpc UpdateCourse(Course) returns (OKResponse);
+//Unary - Delete
+rpc DeleteCourse(CourseId) returns (OKResponse);
+
+
+}
+
+
+message CourseFilter{
+
+         int32 Id = 1 ;
+         string Level = 2 ;
+         string Instructor = 3 ;
+   
+}
+
+
+message Course {
+      
+         //reserved 4;
+         int32 Id = 1 ;
+         string Title = 2 ;
+         int32 Duration = 3 ;
+         string Level = 4 ;
+         string Instructor = 5 ;
+
+         enum PaymentType {
+                               option allow_alias = true;
+                                FREE = 0;
+                                COMPLIMENTARY=0;
+                                PAID = 1;
+	                            GIFT = 2;
+                                
+                            }
+         PaymentType paymentType = 6 ;
+
+ 
+
+
+        message Section  {
+                             int32 Id =1;
+                             int32 CourseId =2;
+                             int32 SeqNo =3;
+                             string Title =4;
+
+                            message Lecture  {
+                                                int32 Id =1;
+                                                int32 CourseId =2;
+                                                int32 SectionId =3;
+                                                int32 SeqNo =4;
+                                                string Name =5;
+
+                                                message Subject{
+                                                                    
+                                                                    string MediaUrl =1;
+                                                               }
+
+                                              
+                                                message Assignment {
+                                                                    
+                                                                    string instructions = 1;
+                                                                    string questions =2;
+                                                }
+                                                  
+                                                     oneof lecture {
+                                                 Subject subject= 6;
+                                                 Assignment assignment = 7;
+                                                }
+                                                string lectureType=8;
+                                              }
+                            repeated Lecture lectures=5;
+                        }
+         repeated Section sections=7;
+
+
+
+        repeated Rating ratings =8;
+}
+
+
+	message Rating {
+		int32 Id =1;
+		int32 CourseId =2;
+		string StudentName =3;
+		int32 StarValue =4;
+		string Review =5;
+		}
+
+
+
+
+message ScalarTypes {
+double	field1 =1;
+float	field2 = 2;
+int32	field3 = 3;
+int64	field4 = 4;
+uint32	field5 = 5;
+uint64	field6 = 6;
+sint32	field7 = 7;
+sint64	field8 = 8 ;
+fixed32	field9 = 9;
+fixed64	field10 = 10;
+sfixed32 field11 = 11;
+sfixed64 field12 = 12;
+bool	field13 = 13;
+string	field14 = 14;
+bytes	field15 = 15;
+}
+
+
+
+
+message CourseList {
+	repeated Course Courses = 1;
+  }
+
+
+message CourseId {
+ string Id = 1 ;
+}
+
+
+
+/*message NullRequest{}*/
+message OKResponse{
+string message =1;
+}
+

@@ -1,0 +1,4 @@
+obj\Debug\net7.0\Protos/Course.cs \
+obj\Debug\net7.0\Protos/CourseGrpc.cs: C:/Users/vaqef/.nuget/packages/grpc.tools/2.56.0/build/native/include/google/protobuf/any.proto\
+ C:/Users/vaqef/.nuget/packages/grpc.tools/2.56.0/build/native/include/google/protobuf/empty.proto\
+ Protos/course.proto

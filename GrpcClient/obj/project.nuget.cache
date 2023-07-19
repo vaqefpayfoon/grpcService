@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "aZisc/s1YnRxA7ZQGb7KFjG82PLaRLnk+fdpMILjHLQGY4p8hfaj2O/xJ4FOI9LR6SA/WVFYA85mmG14sln41A==",
+  "success": true,
+  "projectFilePath": "C:\\dotnet\\FullStack\\GrpcService\\GrpcClient\\GrpcClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vaqef\\.nuget\\packages\\google.protobuf\\3.23.4\\google.protobuf.3.23.4.nupkg.sha512",
+    "C:\\Users\\vaqef\\.nuget\\packages\\grpc.core.api\\2.55.0\\grpc.core.api.2.55.0.nupkg.sha512",
+    "C:\\Users\\vaqef\\.nuget\\packages\\grpc.net.client\\2.55.0\\grpc.net.client.2.55.0.nupkg.sha512",
+    "C:\\Users\\vaqef\\.nuget\\packages\\grpc.net.client.web\\2.55.0\\grpc.net.client.web.2.55.0.nupkg.sha512",
+    "C:\\Users\\vaqef\\.nuget\\packages\\grpc.net.common\\2.55.0\\grpc.net.common.2.55.0.nupkg.sha512",
+    "C:\\Users\\vaqef\\.nuget\\packages\\grpc.tools\\2.56.0\\grpc.tools.2.56.0.nupkg.sha512",
+    "C:\\Users\\vaqef\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
+    "C:\\Users\\vaqef\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}
